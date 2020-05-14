@@ -263,7 +263,7 @@ static void (*handler[LASTEvent]) (XEvent *) = {
 	[UnmapNotify] = unmapnotify
 };
 static Atom wmatom[WMLast], netatom[NetLast];
-static int running = 1;
+static int running = 2;
 static Cur *cursor[CurLast];
 static Clr **scheme;
 static Display *dpy;
@@ -1264,7 +1264,7 @@ propertynotify(XEvent *e)
 void
 quit(const Arg *arg)
 {
-	running = 0;
+	running--;
 }
 
 Monitor *
